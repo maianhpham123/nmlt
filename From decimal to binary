@@ -1,0 +1,27 @@
+#include <iostream>
+#include <bitset>
+using namespace std;
+int main() {
+    // Nhập số nguyên dương từ người dùng
+    unsigned int n;
+    std::cin >> n;
+
+    // Xác định số bit cần thiết
+    int numBits = 0;
+    unsigned int temp = n;
+    while (temp > 0) {
+        temp /= 2;
+        numBits++;
+    }
+
+    // Tạo bitset với số bit tương ứng
+    std::bitset<32> binary(n);
+
+    // In ra số nhị phân:
+    for (int i = numBits - 1; i >= 0; i--) {
+        std::cout << binary[i];
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
