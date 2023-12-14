@@ -1,0 +1,19 @@
+#include <iostream>
+#include <bitset>
+
+int main() {
+    // Nhập số nguyên 32 bit từ người dùng
+    int input_number;
+    std::cin >> input_number;
+
+    // Chuyển đổi số nguyên thành chuỗi bit
+    std::bitset<32> bits(input_number);
+
+    // Đảo giá trị của tất cả các bit
+    bits.flip();
+
+    // In ra giá trị của số đã thay đổi các bit
+    std::cout << bits.to_ulong() << std::endl;
+
+    return 0;
+}
